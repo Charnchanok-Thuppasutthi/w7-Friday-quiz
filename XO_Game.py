@@ -1,11 +1,22 @@
 class Board :
     def __init__(self):
         self.board_list = [[None,None,None],[None,None,None],[None,None,None]]
-        self.turn = 9
-        #self.textinput = Textinput()
-    #def start_game (self):
-        
-
+        self.printer = Printer()
+        self.inputtext = Textinput()
+    def start_game (self):
+        for i in range(9):
+            if i%2 == 0 :
+                symb = "O"
+                column = int(input())
+                row = int(input())
+                self.inputtext.input_symb(column,row,symb,self)
+                self.printer.print_board(self)
+            if i%2 == 1 :
+                symb = "X"
+                column = int(input())
+                row = int(input())
+                self.inputtext.input_symb(column,row,symb,self)
+                self.printer.print_board(self)
 
 
     def check_win (self) :
@@ -38,31 +49,25 @@ class Board :
     
 
 class Printer :
-    def __init__(self):
-        self.board = Board()
+        
 
-    def print_board(self):
-        print(f"{self.board.board_list[0][0]} | {self.board.board_list[0][1]} | {self.board.board_list[0][1]}")
+    def print_board(self,obj):
+        print(f"{obj.board_list[0][0]} | {obj.board_list[0][1]} | {obj.board_list[0][1]}")
         print(f"-----+------+------")
-        print(f"{self.board.board_list[0][0]} | {self.board.board_list[0][1]} | {self.board.board_list[0][1]}")
+        print(f"{obj.board_list[0][0]} | {obj.board_list[0][1]} | {obj.board_list[0][1]}")
         print(f"-----+------+------")
-        print(f"{self.board.board_list[0][0]} | {self.board.board_list[0][1]} | {self.board.board_list[0][1]}")
+        print(f"{obj.board_list[0][0]} | {obj.board_list[0][1]} | {obj.board_list[0][1]}")
 
 
 class Textinput():
-    def __init__(self):
-         self.board = Board()
-    def input_symb(self,indexColumn,indexRow,symbol):
-        if self.board.board_list[indexColumn][indexRow] == None:
-            self.board.setter_symbol (indexColumn, indexRow, symbol)
+
+    def input_symb(self,indexColumn,indexRow,symbol,obj):
+        if obj.board_list[indexColumn][indexRow] == None:
+            obj.setter_symbol(indexColumn, indexRow, symbol)
+            print("test")
         else:
             print ("Cant insert")
 
 
 a = Board()
-a.setter_symbol(0,0,"x")
-a.setter_symbol(0,2,"x")
-a.setter_symbol(0,1,"x")
-p = Printer()
-p.print_board()
-print(a.check_win())
+a.start_game()
