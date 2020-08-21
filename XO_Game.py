@@ -1,7 +1,7 @@
 class Board :
     def __init__(self):
         self.board_list = [[None,None,None],[None,None,None],[None,None,None]]
-        
+
     # def start_game (self):
 
     def check_win (self) :
@@ -33,10 +33,21 @@ class Board :
         self.board_list = [[None,None,None],[None,None,None],[None,None,None]]
     
 
+class Printer :
+    def __init__(self):
+        self.board = Board()
+
+    def print_board(self):
+        print(f"{self.board.board_list[0][0]} | {self.board.board_list[0][1]} | {self.board.board_list[0][1]}")
+        print(f"-----+------+------")
+        print(f"{self.board.board_list[0][0]} | {self.board.board_list[0][1]} | {self.board.board_list[0][1]}")
+        print(f"-----+------+------")
+        print(f"{self.board.board_list[0][0]} | {self.board.board_list[0][1]} | {self.board.board_list[0][1]}")
+
 a = Board()
-a.setter_symbol(0,1,"X")
-a.setter_symbol(0,2,"X")
-a.setter_symbol(0,0,"X")
+a.setter_symbol(0,0,"x")
+a.setter_symbol(0,2,"x")
+a.setter_symbol(0,1,"x")
+p = Printer()
+p.print_board()
 print(a.check_win())
-
-
