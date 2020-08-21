@@ -52,11 +52,11 @@ class Printer :
         
 
     def print_board(self,obj):
-        print(f"{obj.board_list[0][0]} | {obj.board_list[0][1]} | {obj.board_list[0][1]}")
+        print(f"{obj.board_list[0][0]} | {obj.board_list[0][1]} | {obj.board_list[0][2]}")
         print(f"-----+------+------")
-        print(f"{obj.board_list[0][0]} | {obj.board_list[0][1]} | {obj.board_list[0][1]}")
+        print(f"{obj.board_list[1][0]} | {obj.board_list[1][1]} | {obj.board_list[1][2]}")
         print(f"-----+------+------")
-        print(f"{obj.board_list[0][0]} | {obj.board_list[0][1]} | {obj.board_list[0][1]}")
+        print(f"{obj.board_list[2][0]} | {obj.board_list[2][1]} | {obj.board_list[2][2]}")
 
 
 class Textinput():
