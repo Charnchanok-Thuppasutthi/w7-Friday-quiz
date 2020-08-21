@@ -1,8 +1,12 @@
 class Board :
     def __init__(self):
         self.board_list = [[None,None,None],[None,None,None],[None,None,None]]
+        self.turn = 9
+        #self.textinput = Textinput()
+    #def start_game (self):
+        
 
-    # def start_game (self):
+
 
     def check_win (self) :
         if (self.board_list[0][0] == self.board_list[0][1] == self.board_list[0][2] and self.board_list[0][0] != None) :
@@ -43,6 +47,17 @@ class Printer :
         print(f"{self.board.board_list[0][0]} | {self.board.board_list[0][1]} | {self.board.board_list[0][1]}")
         print(f"-----+------+------")
         print(f"{self.board.board_list[0][0]} | {self.board.board_list[0][1]} | {self.board.board_list[0][1]}")
+
+
+class Textinput():
+    def __init__(self):
+         self.board = Board()
+    def input_symb(self,indexColumn,indexRow,symbol):
+        if self.board.board_list[indexColumn][indexRow] == None:
+            self.board.setter_symbol (indexColumn, indexRow, symbol)
+        else:
+            print ("Cant insert")
+
 
 a = Board()
 a.setter_symbol(0,0,"x")
