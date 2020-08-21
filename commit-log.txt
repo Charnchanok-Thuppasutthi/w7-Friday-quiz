@@ -1,0 +1,41 @@
+commit 38843b51eafe425e20cc93c8a32ad93010c133cd
+Author: Charnchanok Thuppasutthi <s6201012620058@email.kmutnb.ac.th>
+Date:   Fri Aug 21 16:07:02 2020 +0700
+
+    Lastcommit tic tac toe maybe
+
+commit 456ad448308060268a5b90e52172339762beb533
+Author: Charnchanok Thuppasutthi <s6201012620058@email.kmutnb.ac.th>
+Date:   Fri Aug 21 14:42:37 2020 +0700
+
+    Delete for loop
+
+commit 86da05f41d14b370032161bb9276cb02560b9c38
+Author: pakpoom <s6201012620210@email.kmutnb.ac.th>
+Date:   Fri Aug 21 14:03:38 2020 +0700
+
+    can play but no win_con
+
+commit 4f31283a7eb304b4f2c536003aa975a89c916b8f
+Author: pakpoom <s6201012620210@email.kmutnb.ac.th>
+Date:   Fri Aug 21 13:42:40 2020 +0700
+
+    can input but table not change
+
+commit f6e6ef028cf70e7ff04da52001ee7add0d50890a
+Author: pakpoom <s6201012620210@email.kmutnb.ac.th>
+Date:   Fri Aug 21 12:51:20 2020 +0700
+
+    add class input
+
+commit 908b30fb41f3514a2331a8e66624b72d6aaef467
+Author: Nipon kamfoy <s6201012630061@email.kmutnb.ac.th>
+Date:   Fri Aug 21 12:38:00 2020 +0700
+
+    add printer class
+
+commit a6a42a24d39cee85bd9804a2892e6b07ca9e56c7
+Author: Nipon kamfoy <s6201012630061@email.kmutnb.ac.th>
+Date:   Fri Aug 21 12:17:30 2020 +0700
+
+    class Board
