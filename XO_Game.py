@@ -2,21 +2,22 @@ class Board :
 
     def __init__(self):
         self.board_list = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]
-        self.printer = Printer()
-        self.inputtext = Textinput()
         self.turn = 0 
 
     def start_game (self):
+        self.printer = Printer()
+        self.inputtext = Textinput()
         while self.turn < 9 :
             if self.turn%2 == 0 :
-                symb = 'X'    
+                symbol = 'X'    
             if self.turn%2 == 1 : 
-                symb = 'O'
+                symbol = 'O'
 
+            print(f"Player {symbol} please select to place !!\n")
             row = int(input("Enter row :"))
             column = int(input("Enter column : "))
 
-            self.inputtext.input_symb(row,column,symb,self)
+            self.inputtext.input_symb(row,column,symbol,self)
             self.printer.print_board(self)
             if self.turn >= 4:
                 if ( self.check_win() != None ) :
@@ -24,11 +25,10 @@ class Board :
                     print("\n")
 
                     self.reset_board() 
+                elif (self.turn == 8 and self.check_win == None):
+                    print("DRAW\n")
+                    self.reset_board() 
             self.turn += 1 
-
-        # print("DRAW")
-        # print("\n")
-        # self.reset_board()
 
 
     def check_win (self) :
@@ -78,11 +78,13 @@ class Printer :
 class Textinput():
 
     def input_symb(self,indexColumn,indexRow,symbol,obj):
-        if indexColumn > 2 or indexRow > 2 or indexColumn < 0 or indexRow < 0 :
+        temp = [0,1,2]
+        if indexColumn not in temp or indexRow not in temp:
             obj.turn -= 1 
             print ("Can't insert please input again !!!")
         elif obj.board_list[indexRow][indexColumn] == ' ':
             obj.setter_symbol(indexColumn, indexRow, symbol)
+          
 
 
             
