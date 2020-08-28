@@ -1,7 +1,7 @@
 class Board :
 
     def __init__(self):
-        self.board_list = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]
+        self.board_list = [['1','2','3'],['4','5','6'],['7','8','9']]
         self.turn = 0 
 
     def start_game (self):
@@ -14,9 +14,12 @@ class Board :
                 symbol = 'O'
 
             print(f"Player {symbol} please select to place !!\n")
-            row = int(input("Enter row :"))
-            column = int(input("Enter column : "))
-
+            number = int(input("add number !!!"))
+            # row = int(input("Enter row :"))
+            # column = int(input("Enter column : "))
+            row = (number-1)//3
+            column = (number-1)%3
+            print(row,column)
             self.inputtext.input_symb(row,column,symbol,self)
             self.printer.print_board(self)
             if self.turn >= 4:
@@ -60,34 +63,38 @@ class Board :
     def reset_board (self):
         result = str(input(" 1v1 Again?(Y / N ) :)"))
         if result in 'Yy' :
-            self.board_list = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']]
+            self.board_list = [['1','2','3'],['4','5','6'],['7','8','9']]
+            self.turn = 0
             self.start_game()
         else :
             exit() 
-            
+
+
 class Printer :
-    def print_board(self,obj):
+    def print_board(self,object_board):
         print("\n")
-        print(f"{obj.getter_symbol(0,0)} | {obj.getter_symbol(0,1)} | {obj.getter_symbol(0,2)}")
+        print(f"{object_board.getter_symbol(2,0)} | {object_board.getter_symbol(2,1)} | {object_board.getter_symbol(2,2)}")
         print(f"--+---+--")
-        print(f"{obj.getter_symbol(1,0)} | {obj.getter_symbol(1,1)} | {obj.getter_symbol(1,2)}")
+        print(f"{object_board.getter_symbol(1,0)} | {object_board.getter_symbol(1,1)} | {object_board.getter_symbol(1,2)}")
         print(f"--+---+--")
-        print(f"{obj.getter_symbol(2,0)} | {obj.getter_symbol(2,1)} | {obj.getter_symbol(2,2)}")
+        print(f"{object_board.getter_symbol(0,0)} | {object_board.getter_symbol(0,1)} | {object_board.getter_symbol(0,2)}")
         print("\n")
+
 
 class Textinput():
 
-    def input_symb(self,indexColumn,indexRow,symbol,obj):
+    def input_symb(self,indexRow,indexColumn,symbol,object_board):
         temp = [0,1,2]
-        if indexColumn not in temp or indexRow not in temp:
-            obj.turn -= 1 
+        not_temp = ['1','2','3','4','5','6','7','8','9']
+        if indexColumn not in temp or indexRow not in temp or object_board.board_list[indexRow][indexColumn] not in not_temp :
+            object_board.turn -= 1 
             print ("Can't insert please input again !!!")
-        elif obj.board_list[indexRow][indexColumn] == ' ':
-            obj.setter_symbol(indexColumn, indexRow, symbol)
+        elif object_board.board_list[indexRow][indexColumn] in not_temp:
+            object_board.setter_symbol(indexRow, indexColumn,  symbol)
           
 
 
-            
+        
 
 
 a_board = Board()
