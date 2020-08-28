@@ -1,3 +1,27 @@
+commit 8c5139e93994bc225078a05e1d541aaaa37690ad
+Author: NiponKamfoy <s6201012630061@email.kmutnb.ac.th>
+Date:   Fri Aug 28 12:34:19 2020 +0700
+
+    change input to oneinput
+
+commit d4af31f6ca61e73081e71d23a19c91665b2da1aa
+Author: NiponKamfoy <s6201012630061@email.kmutnb.ac.th>
+Date:   Fri Aug 28 11:21:53 2020 +0700
+
+    edit name of method and attribute
+
+commit 92f9175451b26cdd87888ce7cb71b044f01bbcd0
+Author: NiponKamfoy <s6201012630061@email.kmutnb.ac.th>
+Date:   Fri Aug 28 10:09:04 2020 +0700
+
+    edit row and column
+
+commit 05a84c72584a824c9ee7f1984f89ff4ebff957f0
+Author: Charnchanok Thuppasutthi <s6201012620058@email.kmutnb.ac.th>
+Date:   Fri Aug 21 16:08:53 2020 +0700
+
+    add commit log
+
 commit 38843b51eafe425e20cc93c8a32ad93010c133cd
 Author: Charnchanok Thuppasutthi <s6201012620058@email.kmutnb.ac.th>
 Date:   Fri Aug 21 16:07:02 2020 +0700
